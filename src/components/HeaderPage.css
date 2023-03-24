@@ -1,0 +1,17 @@
+.headLine {
+    display: flex;
+    background-color: #CB5757;
+    padding: calc(var(--vh, 1vh) * 2) 4vw;
+}
+
+.Title {
+    color: white;
+    font-family: 'Itim', cursive;
+    font-size: calc(var(--vh, 1vh) * 4);
+}
+
+.InfoIcon {
+    float: right;
+    margin: auto 0 auto auto;
+    align-items: center;
+}

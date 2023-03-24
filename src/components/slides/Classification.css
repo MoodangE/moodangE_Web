@@ -1,0 +1,6 @@
+.ClassificationTitle {
+    font-family: 'JejuGothic', cursive;
+    font-size: calc(var(--vh, 1vh) * 5);
+    padding: calc(var(--vh, 1vh) * 3) 4vw;
+
+}

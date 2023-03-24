@@ -1,0 +1,5 @@
+.RoutePathWide {
+    height: calc(var(--vh, 1vh) * 67);
+    background-color: #CB5757;
+    margin: 0 calc(var(--vh, 1vh) * 5);
+}
