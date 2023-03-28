@@ -1,5 +1,129 @@
+.imageSpace svg {
+    height: calc(var(--vh, 1vh) * 7);
+    width: calc(var(--vh, 1vw) * 8);
+}
+
 .RoutePathWide {
+    display: flex;
     height: calc(var(--vh, 1vh) * 67);
-    background-color: #CB5757;
     margin: 0 calc(var(--vh, 1vh) * 5);
+}
+
+/* RoutePathWide Component */
+.imageSpace {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    flex: 2;
+}
+
+.busLineSpace {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    flex: 2;
+}
+
+.LocationTitleSpace {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    flex: 4;
+}
+
+/*busLineSpace Component*/
+.busLine {
+    grid-row: 1;
+    grid-row-end: span 7;
+    grid-column: 1;
+    height: 85%;
+    width: calc(var(--vh, 1vh) * 0.5);
+    margin: auto auto;
+    background-color: #6D6D6D;
+}
+
+#circle_red {
+    width: calc(var(--vh, 1vh) * 2);
+    height: calc(var(--vh, 1vh) * 2);
+    border-radius: 50%;
+    background-color: #CB5757;
+}
+
+.circle_gray {
+    width: calc(var(--vh, 1vh) * 2);
+    height: calc(var(--vh, 1vh) * 2);
+    border-radius: 50%;
+    background-color: #6D6D6D;
+}
+
+/* LocationTitleSpace Component */
+.StationTitle {
+    font-family: 'JejuGothic', cursive;
+    font-size: calc(var(--vh, 1vh) * 3);
+}
+
+/* imageSpace Component */
+.up_MainGate, .down_AI {
+    grid-row: 1;
+    grid-column: 1;
+    margin: auto auto;
+    transition: transfrom 3s ease-in-out;
+}
+
+.up_Tunnel {
+    grid-row: 2;
+    grid-column: 1;
+    margin: auto auto;
+}
+
+.up_Education, .down_MainLib {
+    grid-row: 3;
+    grid-column: 1;
+    margin: auto auto;
+}
+
+.up_EduMainLib, .down_Rotary {
+    grid-row: 4;
+    grid-column: 1;
+    margin: auto auto;
+}
+
+.up_Student, .down_Art {
+    grid-row: 5;
+    grid-column: 1;
+    margin: auto auto;
+}
+
+.up_AI, .down_MainGate {
+    grid-row: 7;
+    grid-column: 1;
+    margin: auto auto;
+}
+
+.Station_0 {
+    position: relative;
+    grid-row: 1;
+    grid-column: 1;
+    margin: auto 0;
+}
+
+.Station_1 {
+    position: relative;
+    grid-row: 3;
+    grid-column: 1;
+    margin: auto 0;
+}
+
+.Station_2 {
+    position: relative;
+    grid-row: 5;
+    grid-column: 1;
+    margin: auto 0;
+}
+
+.Station_3 {
+    position: relative;
+    grid-row: 7;
+    grid-column: 1;
+    margin: auto 0;
 }

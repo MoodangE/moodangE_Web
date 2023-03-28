@@ -7,10 +7,16 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    // Ver. test
+    // <RecoilRoot>
+    //     <React.StrictMode>
+    //         <App/>
+    //     </React.StrictMode>
+    // </RecoilRoot>
+
+    // Ver. deployment
     <RecoilRoot>
-        <React.StrictMode>
-            <App/>
-        </React.StrictMode>
+        <App/>
     </RecoilRoot>
 );
 

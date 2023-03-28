@@ -12,23 +12,36 @@ import {useRecoilValue, useSetRecoilState} from "recoil";
 
 function SlideListPage() {
     const setBusState = useSetRecoilState(busState);
-    const setCongestionState = useSetRecoilState(congestionState);
-
     useEffect(() => {
         const busRef = ref(myDatabase, 'dataList/Bus');
-        const congestionRef = ref(myDatabase, 'dataList/Congestion');
-
         onValue(busRef, (snapshot) => {
-            setBusState(snapshot.val());
+            const busData = snapshot.val();
+            const upBusData = [];
+            const downBusData = [];
+            // up 상태와 down 상태가 true 인걸 분류
+            Object.entries(busData).forEach(([key, value]) => {
+                if (value.up && value.power) {
+                    upBusData.push({id: key, ...value});
+                }
+                if (value.down && value.power) {
+                    downBusData.push({id: key, ...value});
+                }
+            });
+            setBusState({up: upBusData, down: downBusData});
         });
+    }, [setBusState]);
 
+    const setCongestionState = useSetRecoilState(congestionState);
+    useEffect(() => {
+        const congestionRef = ref(myDatabase, 'dataList/Congestion');
         onValue(congestionRef, (snapshot) => {
             setCongestionState(snapshot.val());
         });
-    }, [setBusState, setCongestionState]);
+    }, [setCongestionState]);
 
     const congestionInfo = useRecoilValue(congestionState)
-
+    const busInfo = useRecoilValue(busState)
+    console.log(busInfo)
     return (
         <Swiper className="RoutePage"
                 modules={[Navigation, Pagination]}
@@ -37,14 +50,16 @@ function SlideListPage() {
                 direction={"horizontal"}
                 loop={false}>
             <SwiperSlide>
-                <SlideRoute classification={"상행"}
+                <SlideRoute direction={"up"}
                             place={"정문"}
-                            level={congestionInfo.MainGate}/>
+                            level={congestionInfo.MainGate}
+                            busData={busInfo.up}/>
             </SwiperSlide>
             <SwiperSlide>
-                <SlideRoute classification={"하행"}
+                <SlideRoute direction={"down"}
                             place={"AI 공학관"}
-                            level={congestionInfo.AI}/>
+                            level={congestionInfo.AI}
+                            busData={busInfo.down}/>
             </SwiperSlide>
         </Swiper>
     );

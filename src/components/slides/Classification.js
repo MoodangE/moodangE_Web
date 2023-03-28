@@ -4,7 +4,7 @@ import "./Classification.css"
 function Classification({title}){
     return(
         <div className="ClassificationTitle">
-            {title}
+            {title === "up" ? "상향" : "하향"}
         </div>
     );
 }

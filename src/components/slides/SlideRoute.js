@@ -4,11 +4,11 @@ import CurrentPath from "./CurrentPath";
 import Congestion from "./Congestion";
 import Classification from "./Classification"
 
-function SlideRoute({classification, place, level}) {
+function SlideRoute({direction, place, level, busData}) {
     return (
         <div className="RoutePage">
-            <Classification title={classification}/>
-            <CurrentPath/>
+            <Classification title={direction}/>
+            <CurrentPath busData={busData} direction={direction}/>
             <Congestion place_congestion={place}
                         level={level}/>
         </div>
