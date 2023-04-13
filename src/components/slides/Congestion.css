@@ -24,3 +24,15 @@
     float: left;
     flex: 2;
 }
+.Spare{
+    color: #3030D2;
+}
+.General{
+    color: #53B651;
+}
+.Caution{
+    color: #EBC854;
+}
+.Congestion{
+    color: #C84A3F;
+}
