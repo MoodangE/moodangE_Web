@@ -100,30 +100,39 @@
     margin: auto auto;
 }
 
-.Station_0 {
+.Station {
     position: relative;
+    grid-column: 1;
+    margin: auto 0;
+}
+
+.grid_1 {
     grid-row: 1;
-    grid-column: 1;
-    margin: auto 0;
 }
 
-.Station_1 {
-    position: relative;
+.grid_2 {
+    color: #A9A9A9;
+    grid-row: 2;
+}
+
+.grid_3 {
     grid-row: 3;
-    grid-column: 1;
-    margin: auto 0;
 }
 
-.Station_2 {
-    position: relative;
+.grid_4 {
+    color: #A9A9A9;
+    grid-row: 4;
+}
+
+.grid_5 {
     grid-row: 5;
-    grid-column: 1;
-    margin: auto 0;
 }
 
-.Station_3 {
-    position: relative;
+.grid_6 {
+    color: #A9A9A9;
+    grid-row: 6;
+}
+
+.grid_7 {
     grid-row: 7;
-    grid-column: 1;
-    margin: auto 0;
 }

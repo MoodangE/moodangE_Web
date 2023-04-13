@@ -9,8 +9,7 @@
 
 .PlaceTitle {
     display: flex;
-    padding-left: 5vw;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex: 5;
 }
@@ -18,14 +17,13 @@
 .LevelTitle {
     display: flex;
     color: #A9A9A9;
-    padding-right: 15vw;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     float: left;
-    flex: 2;
+    flex: 4;
 }
 .Spare{
-    color: #3030D2;
+    color: #3AB0FF;
 }
 .General{
     color: #53B651;
@@ -35,4 +33,8 @@
 }
 .Congestion{
     color: #C84A3F;
+}
+
+.waiting_person{
+    font-size: calc(var(--vh, 1vh) * 2);
 }

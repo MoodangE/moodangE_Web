@@ -1,7 +1,8 @@
 import Header from "./components/HeaderPage"
 import Slide from "./components/SlideListPage"
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {BrowserView, MobileView} from "react-device-detect";
+import Modal from "./components/modal/Modal";
 
 function App() {
     // 모바일 100vh 스크롤 생기는 문제 해결
@@ -25,15 +26,22 @@ function App() {
         fontSize: '3vh'
     }
 
+    const [modalOpen, setModalOpen] = useState(false)
+    const modalShow = () => {
+        setModalOpen(true);
+        document.body.style.overflow = "hidden";
+    };
+
     return (
         <div className="App">
-            <BrowserView style={browserStyle}>
-                <div style={browserTextStyle}>Please connect to mobile</div>
-            </BrowserView>
-            <MobileView>
-                <Header/>
-                <Slide/>
-            </MobileView>
+            {/*<BrowserView style={browserStyle}>*/}
+            {/*    <div style={browserTextStyle}>Please connect to mobile</div>*/}
+            {/*</BrowserView>*/}
+            {/*<MobileView>*/}
+            {modalOpen && <Modal setModalOpen={setModalOpen}/>}
+            <Header modalShow={modalShow}/>
+            <Slide/>
+            {/*</MobileView>*/}
         </div>
     );
 }

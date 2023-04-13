@@ -35,13 +35,24 @@ function SlideListPage() {
     useEffect(() => {
         const congestionRef = ref(myDatabase, 'dataList/Congestion');
         onValue(congestionRef, (snapshot) => {
-            setCongestionState(snapshot.val());
+            const congestionData = snapshot.val();
+            const mainGateData = [];
+            const AIData = [];
+            Object.entries(congestionData).forEach(([key, value]) => {
+                if (key === 'MainGate') {
+                    mainGateData.push({id: key, ...value});
+                }
+                if (key === 'AI') {
+                    AIData.push({id: key, ...value});
+                }
+            });
+            setCongestionState({mainGate: mainGateData, ai: AIData});
         });
     }, [setCongestionState]);
 
     const congestionInfo = useRecoilValue(congestionState)
     const busInfo = useRecoilValue(busState)
-    console.log(busInfo)
+
     return (
         <Swiper className="RoutePage"
                 modules={[Navigation, Pagination]}
@@ -52,13 +63,13 @@ function SlideListPage() {
             <SwiperSlide>
                 <SlideRoute direction={"up"}
                             place={"정문"}
-                            level={congestionInfo.MainGate}
+                            levelData={congestionInfo.mainGate}
                             busData={busInfo.up}/>
             </SwiperSlide>
             <SwiperSlide>
                 <SlideRoute direction={"down"}
                             place={"AI 공학관"}
-                            level={congestionInfo.AI}
+                            levelData={congestionInfo.ai}
                             busData={busInfo.down}/>
             </SwiperSlide>
         </Swiper>

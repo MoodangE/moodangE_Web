@@ -10,8 +10,13 @@
     font-size: calc(var(--vh, 1vh) * 3.5);
 }
 
-.InfoIcon {
+.InfoButton {
     float: right;
     margin: auto 0 auto auto;
     align-items: center;
+}
+
+.InfoIcon {
+    color: white;
+    font-size: 4vh;
 }

@@ -1,15 +1,17 @@
 import React from "react";
 import "./HeaderPage.css"
 import "../static/fonts/font.css"
-import InfoButton from "../static/img/InfoButton";
+import {AiFillInfoCircle} from 'react-icons/ai';
 
-function HeaderPage() {
+function HeaderPage({modalShow}) {
     return (
         <div className="headLine">
             <span className="Title">
                 MoodangE
             </span>
-            <InfoButton className="InfoIcon"/>
+            <span className="InfoButton">
+                <AiFillInfoCircle className="InfoIcon" onClick={modalShow}/>
+            </span>
         </div>
     )
 }
