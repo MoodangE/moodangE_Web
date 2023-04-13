@@ -34,14 +34,14 @@ function App() {
 
     return (
         <div className="App">
-            {/*<BrowserView style={browserStyle}>*/}
-            {/*    <div style={browserTextStyle}>Please connect to mobile</div>*/}
-            {/*</BrowserView>*/}
-            {/*<MobileView>*/}
+            <BrowserView style={browserStyle}>
+                <div style={browserTextStyle}>Please connect to mobile</div>
+            </BrowserView>
+            <MobileView>
             {modalOpen && <Modal setModalOpen={setModalOpen}/>}
             <Header modalShow={modalShow}/>
             <Slide/>
-            {/*</MobileView>*/}
+            </MobileView>
         </div>
     );
 }
