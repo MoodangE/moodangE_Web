@@ -67,39 +67,92 @@
     grid-row: 1;
     grid-column: 1;
     margin: auto auto;
-    transition: transfrom 3s ease-in-out;
 }
 
 .up_Tunnel {
     grid-row: 2;
     grid-column: 1;
     margin: auto auto;
+    animation: slideRow1_1 2s ease-in-out;
 }
 
 .up_Education, .down_MainLib {
     grid-row: 3;
     grid-column: 1;
     margin: auto auto;
+    animation: slideRow1_2 2s ease-in-out;
 }
 
 .up_EduMainLib, .down_Rotary {
     grid-row: 4;
     grid-column: 1;
     margin: auto auto;
+    animation: slideRow1_3 2s ease-in-out;
 }
 
 .up_Student, .down_Art {
     grid-row: 5;
     grid-column: 1;
     margin: auto auto;
+    animation: slideRow1_4 2s ease-in-out;
 }
 
 .up_AI, .down_MainGate {
     grid-row: 7;
     grid-column: 1;
     margin: auto auto;
+    animation: slideRow2 2s ease-in-out;
 }
 
+@keyframes slideRow1_1 {
+    0% {
+        transform: translateY(calc(var(--vh, 1vh) * -9.5));
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes slideRow1_2 {
+    0% {
+        transform: translateY(calc(var(--vh, 1vh) * -9.5));
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideRow1_3 {
+    0% {
+        transform: translateY(calc(var(--vh, 1vh) * -9.5));
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideRow1_4 {
+    0% {
+        transform: translateY(calc(var(--vh, 1vh) * -9.5));
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideRow2 {
+    0% {
+        transform: translateY(calc(var(--vh, 1vh) * -19));
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.stop{
+    animation: none;
+}
+
+/*LocationTitleSpace Component*/
 .Station {
     position: relative;
     grid-column: 1;

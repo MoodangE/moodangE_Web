@@ -1,8 +1,19 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import "./CurrentPath.css"
 import {ReactComponent as MoodangE} from "../../static/img/MoodangE.svg"
 
 function CurrentPath({busData, direction}) {
+    const animationRef = useRef(null);
+
+    useEffect(() => {
+        if (animationRef.current) {
+            // 클래스 이름이 변경될 때마다 애니메이션 실행
+            animationRef.current.classList.add("animate");
+            setTimeout(() => {
+                animationRef.current.classList.remove("animate");
+            }, 1000);
+        }
+    }, [busData,direction]);
 
     const busDataList = busData
         ? Object.entries(busData).map(([, value]) => ({
@@ -40,7 +51,7 @@ function CurrentPath({busData, direction}) {
             <div className="busLineSpace">
                 <div className="busLine"/>
                 {show_location_en.map((list, index) => (
-                    <div key={index} className={`${direction}_${list} circle_gray`}/>
+                    <div key={index} className={`${direction}_${list} circle_gray stop`}/>
                 ))}
                 {busDataList && busDataList.map((bus, index) => (
                     <div key={`bus_${index}`} id='circle_red' className={`${bus.type}_${bus.location}`}/>
