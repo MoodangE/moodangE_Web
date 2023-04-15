@@ -53,8 +53,8 @@ function CurrentPath({busData, direction}) {
                 {show_location_en.map((list, index) => (
                     <div key={index} className={`${direction}_${list} circle_gray stop`}/>
                 ))}
-                {busDataList && busDataList.map((bus, index) => (
-                    <div key={`bus_${index}`} id='circle_red' className={`${bus.type}_${bus.location}`}/>
+                {busDataList && busDataList.map((bus) => (
+                    <div key={`on_${bus.busId}`} id='circle_red' className={`${bus.type}_${bus.location}`}/>
                 ))}
             </div>
             <div className="LocationTitleSpace">
