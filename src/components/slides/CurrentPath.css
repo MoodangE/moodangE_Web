@@ -76,11 +76,18 @@
     animation: slideRow1_1 2s ease-in-out;
 }
 
-.up_Education, .down_MainLib {
+.up_Education {
     grid-row: 3;
     grid-column: 1;
     margin: auto auto;
     animation: slideRow1_2 2s ease-in-out;
+}
+
+.down_MainLib {
+    grid-row: 3;
+    grid-column: 1;
+    margin: auto auto;
+    animation: slideRow2 2s ease-in-out;
 }
 
 .up_EduMainLib, .down_Rotary {
